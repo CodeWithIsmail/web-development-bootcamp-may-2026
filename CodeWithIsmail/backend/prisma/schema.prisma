@@ -36,6 +36,8 @@ model Category {
 
   transactions Transaction[]
   budgets      Budget[]
+
+  @@unique([categoryName, userId], name: "unique_category_per_user")
 }
 
 model Transaction {
